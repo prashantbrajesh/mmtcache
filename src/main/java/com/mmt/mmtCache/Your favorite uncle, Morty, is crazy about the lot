@@ -1,0 +1,73 @@
+Your favorite uncle, Morty, is crazy about the lottery and even crazier about how he picks his “lucky” numbers. And even though his “never fail” strategy has yet to succeed, Uncle Morty doesn't let that get him down.
+
+Every week he searches through the Sunday newspaper to find a string of digits that might be potential lottery picks. But this week the newspaper has moved to a new electronic format, and instead of a comfortable pile of papers, Uncle Morty receives a text file with the stories.
+
+Help your Uncle find his lotto picks. Given a large series of number strings, return each that might be suitable for a lottery ticket pick. Note that a valid lottery ticket satisfies the following properties
+
+The digits must form 7 unique numbers between 1 and 59
+Digits must be used in order. This means that you cannot form a number using digit n and digit n + 10, for example. Eg: In 12345678, you can't use 1 and 3 to get 13 in your lottery pick
+Every digit must be used exactly once. This means that you cannot use one digit as a part of two different numbers. Eg: In 1234567, you can't get 12 23 3 4 5 6 7 as the lottery pick as the digit 2 is being used in both 12 and 23 
+All the digits must be used. Eg: If the sequence is 12345679, 1 2 3 4 5 6 7 cannot be a valid lottery pick as the final digit 9 also must be used. 
+ 
+
+Input format:
+
+The first line contains the number of number strings, n
+
+The next n lines contain a single number string each.
+
+ 
+
+Output format:
+
+Print a single number string and a valid lottery pick pair on each line, separated by a "->". e.g. 1234567 -> 1 2 3 4 5 6 7
+
+If there is more than one valid lottery pick for a given number string, print them in separate lines in the format above
+
+ 
+
+Sample input: 
+
+ 
+
+5
+
+569815571556
+
+4938532894754
+
+1234567
+
+472844278465445
+
+0123456
+
+ 
+
+Sample output:
+
+ 
+
+4938532894754 -> 49 38 53 28 9 47 54
+
+1234567 -> 1 2 3 4 5 6 7
+
+ 
+
+Explanation:
+
+The first line in the input specifies there are 5 number strings.
+
+Given the 5 number strings, only 4938532894754 and 1234567 are suitable for valid lottery ticket picks. Each lottery pick is printed, preceded by its number string, on a separate line.
+
+ 
+
+ 
+
+Note: In cases when a particular string leads to more than one pick, print all the picks and use "Natural Sort order" to decide which pick to print first.
+
+For example,
+
+Print  2 5 23 21 4 56 7 before 25 2 3 21 4 56 7 since 2 comes before 25 according to Natural Sort order
+
+Print 2 5 23 21 4 56 7 before 2 52 32 1 4 56 7 since 5 comes before 52 according to Natural Sort order
